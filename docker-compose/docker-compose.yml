@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  dev:
+    build:
+      context: ../Dockerfile
+      dockerfile: Dockerfile
+    image: audio_craft
+    container_name: audio_craft
+    volumes:
+      - ../src:/app/src
+    working_dir: /app
+    tty: true
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

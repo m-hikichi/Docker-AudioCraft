@@ -1,0 +1,4 @@
+torch==2.1.0
+setuptools==65.5.1
+wheel==0.38.4
+audiocraft==1.1.0
